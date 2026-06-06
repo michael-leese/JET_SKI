@@ -1,0 +1,14 @@
+version: "3.9"
+services:
+  db:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_USER: jetski
+      POSTGRES_PASSWORD: jetski
+      POSTGRES_DB: jetski_local
+    ports:
+      - "5432:5432"
+    volumes:
+      - dbdata:/var/lib/postgresql/data
+volumes:
+  dbdata:
